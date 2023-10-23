@@ -12,7 +12,10 @@ mongoConnect();
 const server = express();
 
 server.use(cors());
+
 server.use(express.json());
+
+server.set('views', path.join(__dirname,'views'));
 
 server.use(express.static(path.join(__dirname, '../public')));
 server.use(express.urlencoded({ extended: true }));
