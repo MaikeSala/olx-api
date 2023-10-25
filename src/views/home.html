@@ -59,8 +59,45 @@
     <hr>
     
     <div class="banner">
-        <img src="../../public/assets/images/banner.jpg" alt="">
+        <div class="slides">
+            <!-- Radio Buttons -->
+            <input type="radio" name="radio-btn" id="radio1">
+            <input type="radio" name="radio-btn" id="radio2">
+            <input type="radio" name="radio-btn" id="radio3">
+            <input type="radio" name="radio-btn" id="radio4">
+
+            <!-- Slide images -->
+            <div class="slide first">
+                <img src="../../public/assets/images/banner.jpg" alt="Imagem 1">
+            </div>
+            <div class="slide">
+                <img src="../../public/assets/images/banner2.jpg" alt="Imagem 2">
+            </div>
+            <div class="slide">
+                <img src="../../public/assets/images/banner3.jpg" alt="Imagem 3">
+            </div>
+            <div class="slide">
+                <img src="../../public/assets/images/banner4.jpg" alt="Imagem 4">
+            </div>
+
+            <!-- Navigation auto -->
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+                <div class="auto-btn4"></div>
+            </div>
+        </div>
+
+        <div class="manual-navigation">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+        </div>
     </div>
+
+
     <div class="categorias">
         <div class="model-categoria">
             <img src="../../public/assets/images/carro.jpg" alt="">
@@ -106,6 +143,6 @@
         </div>
     </div>
     
-    <script src="../../public/assets/js/superplaceholder.js"></script>
+    <script src="../../public/assets/js/slider.js"></script>
 </body>
 </html>
