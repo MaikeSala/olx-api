@@ -15,11 +15,11 @@ export const getCategories = async (req: Request, res: Response) => {
     for(const cat of cats) {
         categories.push({
             ...cat.toObject(),
-            img: `${process.env.BASE}/assets/images/${cat.slug}.png`
+            img: `${process.env.BASE}/assets/images/${cat.slug}.jpg`
         });
     }
 
-    res.json({categories});
+    res.json({results: categories});
 }
 
 export const addAction = async (req: Request, res: Response) => {
@@ -69,7 +69,7 @@ export const addAction = async (req: Request, res: Response) => {
 }
 
 export const getList = async (req: Request, res: Response) => {
-    const { sort = 'asc', offset = 0, limit = 8, q, cat, state}  = req.query;
+    const { sort = 'asc', offset = 0, limit = 8, q, cat, state, views}  = req.query;
     const filters: any = { status: true};
     let total: number = 0;
 
@@ -82,6 +82,12 @@ export const getList = async (req: Request, res: Response) => {
         const c = await Category.findOne({slug: cat}).exec();
         if(c) {
             filters.category = c.id.toString();
+        }
+    }
+    if(views) {
+        const v = await Ad.findOne({views}).exec();
+        if(v) {
+            filters.views = v.id.toString();
         }
     }
 
@@ -103,33 +109,33 @@ export const getList = async (req: Request, res: Response) => {
         .limit(+limit)
         .exec();
 
-    const ads = adsData.map((ad) => ({
-        id: ad._id,
-        title: ad.title,
-        price: ad.price,
-        priceNegotiable: ad.priceNegotiable,
-    }));
+    const ads: any[] = []
 
-    console.log('Filters:', filters);
-    res.json({ads, total});
+    for( const ad of adsData) {
+        const stateData = await State.findById(ad.state).exec();
+        ads.push({
+            id: ad._id,
+            title: ad.title,
+            price: ad.price,
+            priceNegotiable: ad.priceNegotiable,
+            state: stateData ? stateData.name : null
+        });
+    };
+
+    res.json({results: ads, total});
 
 }
 
 export const getItem = async (req: Request, res: Response) => {
-    const { id, other = null} = req.query;
+    const { title, other = null} = req.query;
 
     // Recebe o id, verifica se é válido e adiciona 1 view no ad visualizado
-    if(!id) {
+    if(!title) {
         res.json({ error:'Sem produto'});
         return;
     }
 
-    if(typeof id === 'string' && id.length < 12) {
-        res.json({ error: 'ID inválido'});
-        return;
-    }
-
-    const ad = await Ad.findById(id);
+    const ad = await Ad.findOne({ title });
     if(!ad) {
         res.json({error: 'Produto inexistente'});
         return;
@@ -138,7 +144,7 @@ export const getItem = async (req: Request, res: Response) => {
     ad.views++;
     await ad.save();
 
-    // Busca as infos do ad utilizando os ids cadastrados no nele mesmo
+    // Busca as infos do ad utilizando os ids cadastrados nele mesmo
     const category = await Category.findById(ad.category).exec();
     const userInfo = await User.findById(ad.idUser).exec();
     const stateInfo = await State.findById(ad.state).exec();
@@ -162,7 +168,7 @@ export const getItem = async (req: Request, res: Response) => {
     }
 
     res.json({
-        id: ad._id,
+        title: ad.title,
         price: ad.price,
         priceNegotiable: ad.priceNegotiable,
         description: ad.description,
