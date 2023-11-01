@@ -14,13 +14,19 @@
 <body>
     <header class="cabecalho">
         <div class="logo">
-            <img src="../../public/assets/images/olx-104.png" alt="">
+            <a href="">
+                <img src="../../public/assets/images/olx-104.png" alt="">
+            </a>
         </div>
         <div class="search">
-            <form action="">
+            <form action="" method="">
                 <input type="text" id="search-input" placeholder="Buscar">
+                <div class="select-form">
                     <span class="material-symbols-outlined">location_on</span>
-                <select name="" id=""></select>
+                    <select name="" id="">
+                        <option value="SP">SP</option>
+                    </select>
+                </div>
                 <button class="search-button">
                     <span class="material-symbols-outlined">search</span>
                 </button>
@@ -29,27 +35,33 @@
 
         <div class="navBar">
             <div class="meus-anuncios item" >
-                <span class="material-symbols-outlined">
-                    grid_view
-                </span>
-                <a href="">Meus Anúncios</a>
+                <a href="">
+                    <span class="material-symbols-outlined">
+                        grid_view
+                    </span>
+                    Meus Anúncios
+                </a>
             </div>
             <div class="chat item">
-                <span class="material-symbols-outlined">
-                    chat_bubble
-                </span>
-                <a href="">Chat</a>
+                <a href="">
+                    <span class="material-symbols-outlined">
+                        chat_bubble
+                    </span>
+                Chat</a>
             </div>
             <div class="notificacao item">
-                <span class="material-symbols-outlined">
-                    notifications
-                </span>
-                <a href="">Notificações</a>
+                <a href="">
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+                Notificações</a>
             </div>
         </div>
 
         <div class="login">
-            <button>Entrar</button>
+            <a href="../views/loginEcadastro.html">
+                <button>Entrar</button>
+            </a>
         </div>
 
         <div class="novo-anuncio">

@@ -15,8 +15,10 @@ body {
 }
 .search form  {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 100%;
+    height: 36px;
+    width: 300px;
     padding: 5px;
 }
 .search form input {
@@ -25,12 +27,35 @@ body {
     border-right: 1px solid #C0C0C0;
     outline: none;
 }
+.select-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.select-form:hover {
+    border: 1px solid #C0C0C0;
+    border-radius: 10px;
+}
 .search form select {
     border: none;
 }
 .search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
+    border-radius: 20px;
+    height: 35px;
     background-color: white;
+    cursor: pointer;
+}
+.search-button:hover {
+    background-color: #CFD4DD;
+    transition: 0.2s;
 }
 .navBar {
     width: 50%;
@@ -42,8 +67,15 @@ body {
     color: #363636;
 }
 .navBar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     text-decoration: none;
     color: #363636
+}
+.navBar a:hover {
+    color: #5C08B2;
 }
 
 .meus-anuncios {
@@ -77,14 +109,25 @@ body {
     background-color: white;
     color: #363636;
     margin-right: 20px;
+    cursor: pointer;
+}
+.login button:hover {
+    color: #5C08B2;
+    border: 1px solid #5C08B2;
+    transition: 0.5s;
 }
 .novo-anuncio button {
     height: 40px;
     width: 100px;
     border: none;
     border-radius: 20px;
-    background-color: orange;
-    color: white
+    background-color: #F28000;
+    color: white;
+    cursor: pointer ;
+}
+.novo-anuncio button:hover {
+    background-color: #DF7400;
+    transition: 0.5s;
 }
 
 .banner {

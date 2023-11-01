@@ -1,0 +1,115 @@
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-color: #F9F9F9;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #FFFFFF;
+    box-shadow: rgba(153, 153, 153, 0.2) 0px 2px 4px 0px;
+}
+.logo {
+    margin: 20px;
+}
+.logo img{
+    height: 30px;
+}
+.ori {
+    margin-bottom: 10px;
+}
+.ori span{
+    font-size: 25px;
+}
+.form-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-login form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+#input-email {
+    width: 330px;
+    height: 20px;
+    padding: 12px;
+    border: 1px solid #CFD4DD;
+    border-radius: 10px;
+}
+
+#input-submit{
+    background-color: #F28000;
+    width: 350px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-weight: 700;
+}
+.linha-texto {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.line-cadastro {
+    flex: 1;
+    width: 297px;
+    border-top: 1px solid #CFD4DD;
+}
+.line {
+    flex: 1;
+    width: 80px;
+    border-top: 1px solid #CFD4DD;
+}
+.text {
+    color: gray;
+    padding: 0 10px;
+    font-size: 13px;
+}
+.login-externo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    height: 120px;
+}
+
+.google img {
+    height: 50px;
+}
+.face img {
+    height: 50px;
+}
+
+.link-cadastro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+.link-cadastro a {
+    text-decoration: none;
+    color: #5C08B2;
+}

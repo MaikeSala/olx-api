@@ -1,9 +1,8 @@
 /* Tasks: 
-- Conectar a api;
-- Pegar dados da categoria;
-- Pegar dados dos anuncios;
-- Acessar rotas de login e cadastro;
-- Acessar rota de busca
+- Conectar a api; -feito
+- Pegar dados da categoria; -feito
+- Pegar dados dos anuncios; -feito
+- Acessar rota de busca -feito
 */
 
 const categoriesResults = document.querySelector('.categorias');
