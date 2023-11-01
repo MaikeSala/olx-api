@@ -3,12 +3,14 @@
 - Pegar dados da categoria; -feito
 - Pegar dados dos anuncios; -feito
 - Acessar rota de busca -feito
+- Pegar dados de todos os estados
 */
 
 const categoriesResults = document.querySelector('.categorias');
 const produtsResults = document.querySelector('.mais-procurados');
 const inputEl = document.getElementById('search-input');
 const button = document.querySelector('.search-button');
+const select = document.getElementById('select-states');
 
 // Acessar API
 const apiAcess = async(item) => {
@@ -43,7 +45,7 @@ const categories = async () => {
 }
 
     // Acessa e lista todos os ads
-const ads = async() => {
+const ads = async () => {
     const ad = await apiAcess('http://localhost:2000/ad/list');
     const data = await ad.json();
 
@@ -89,7 +91,7 @@ const ads = async() => {
 }
 
 let inputData = '';
-
+// Acessa rota de busca de ads
 const search = async () => {
     inputData = inputEl.value;
 
@@ -104,5 +106,21 @@ button.addEventListener('click', (event) => {
     inputEl.value = '';
 })
 
+const states = async () => {
+    // Requisição para pegar dados dos estados
+    const stateData = await apiAcess('http://localhost:2000/states');
+    const data = await stateData.json();
+
+    const results = data.results;
+    // Preenche o select com  os states
+    for(const result of results) {
+        const option = document.createElement('option');
+        option.innerText = result.name;
+
+        select.appendChild(option);
+    }
+}
+
+states();
 categories();
 ads();

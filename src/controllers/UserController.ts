@@ -16,7 +16,7 @@ export const getStates = async (req: Request, res: Response) => {
 
     // Find para procurar todos os estados no banco de dados
     let states = await State.find({});
-    res.json({ states })
+    res.json({results: states })
 };
 
 export const info = async (req: Request, res: Response) => {
