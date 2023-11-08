@@ -17,9 +17,11 @@
             <span>Acesse a sua conta</span>
         </div>
         <div class="form-login">
-            <span>E-mail</span>
-            <form action="">
+            <form id="myFormLog" action="http://localhost:2000/user/signin" method="post">
+                <span>E-mail</span>
                 <input type="email" name="email" id="input-email">
+                <span>Senha</span>
+                <input type="password" id="input-password">
                 <input type="submit" id="input-submit" value="Continuar">
             </form>
         </div>
@@ -41,7 +43,7 @@
             <div class="line"></div>
         </div>
         <div class="link-cadastro">
-            <span>Não tem uma conta?<a href=""> Cadastre-se</a></span>
+            <span>Não tem uma conta?<a id="cadastre-se" href=""> Cadastre-se</a></span>
             <span>Preciso de ajuda ></span>
         </div>
     </div>
@@ -69,22 +71,24 @@
             <div class="line-cad"></div>
         </div>
         <div class="form-cadastro">
-            <form action="">
+            <form id="myFormCad" action="http://localhost:2000/user/signup" method="post">
                 <span>Apelido</span>
-                <input type="text" id="input-apelido"  name="Apelido" value="Exemplo: João S.">
+                <input type="text" id="input-apelido"  name="name" placeholder="Exemplo: João S.">
                 <span>E-mail</span>
-                <input type="email" name="email" id="input-email">
+                <input type="email" name="email" id="input-email-cad">
                 <span>Senha</span>
-                <input type="password" id="input-password">
-                <input type="submit" id="input-submit" value="Cadastre-se">
+                <input type="password" name="password" id="input-password-cad">
+                <input type="submit" id="input-submit-cad" value="Cadastre-se">
             </form>
         </div>
 
         <div class="link-cadastro">
-            <span>Já tem uma conta?<a href=""> Entrar</a></span>
+            <span>Já tem uma conta?<a id="entrar" href="#"> Entrar</a></span>
             <span>Preciso de ajuda ></span>
         </div>
     </div>
 
+
+    <script src="../../public/assets/js/login.cadastro.js"></script>
 </body>
 </html>

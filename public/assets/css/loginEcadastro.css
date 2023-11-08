@@ -38,8 +38,6 @@ html {
 .form-login form{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 20px;
 }
 #input-email {
@@ -48,8 +46,16 @@ html {
     padding: 12px;
     border: 1px solid #CFD4DD;
     border-radius: 10px;
+    outline: none;
 }
-
+#input-password {
+    width: 330px;
+    height: 20px;
+    padding: 12px;
+    border: 1px solid #CFD4DD;
+    border-radius: 10px;
+    outline: none;
+}
 #input-submit{
     background-color: #F28000;
     width: 350px;
@@ -132,12 +138,21 @@ html {
     border: 1px solid #CFD4DD;
     border-radius: 10px;
 }
-#input-password {
+#input-email-cad {
     width: 330px;
     height: 20px;
     padding: 12px;
     border: 1px solid #CFD4DD;
     border-radius: 10px;
+    outline: none;
+}
+#input-password-cad {
+    width: 330px;
+    height: 20px;
+    padding: 12px;
+    border: 1px solid #CFD4DD;
+    border-radius: 10px;
+    outline: none;
 }
 
 .linha-texto-cad {

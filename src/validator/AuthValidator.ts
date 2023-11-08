@@ -20,10 +20,10 @@ export const signup = checkSchema({
         },
         errorMessage: 'Senha precisa ter pelo menos 2 caracteres'
     },
-    state: {
+    /* state: {
         notEmpty: true,
         errorMessage: 'Estado não preenchido'
-    }
+    } */
 });
 
 export const signin = checkSchema({

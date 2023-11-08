@@ -46,9 +46,7 @@ export const signup = async (req: Request, res: Response) => {
     const data = matchedData(req);
     
     // Verificando se e-mail já existe
-    const user = await User.findOne({
-        where:{ email: data.email }
-    });
+    const user = await User.findOne({ email: data.email });
     if(user) {
         res.json({
             error:{email: {msg: 'E-mail já existe'}}
@@ -57,7 +55,7 @@ export const signup = async (req: Request, res: Response) => {
     }
 
     // Verificando se o estado existe
-    if(mongoose.Types.ObjectId.isValid(data.state)){
+   /*  if(mongoose.Types.ObjectId.isValid(data.state)){
         const stateItem = await State.findById(data.state);
         if(!stateItem) {
             res.json({
@@ -70,7 +68,7 @@ export const signup = async (req: Request, res: Response) => {
             error: {state: { msg: 'Código de estado inválido '}}
         });
         return;
-    }
+    } */
 
     // Encriptando  senha 
     const passwordHash = await bcrypt.hash(data.password, 10);
