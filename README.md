@@ -28,6 +28,10 @@
 ## Rodar
 
 ```bash
+
+# Pré-requisitos globais:
+$ npm i -g nodemon typescript ts-node
+
 # Instalar dependências
 $ npm install
 
