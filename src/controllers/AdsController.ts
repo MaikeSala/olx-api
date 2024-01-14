@@ -27,21 +27,22 @@ export const addAction = async (req: Request, res: Response) => {
     const user = await User.findOne({token}).exec();
     
     // Pega as infos da req e faz as verificações para saber se os dados foram mandados
-    if(!title || !cat) {
+    if(!title) {
         res.json({error: 'Título e/ou categoria não foram preenchidos'});
         return;
     }
     
-    if(cat.length < 12) {
+    /* if(cat.length < 12) {
         res.json({error: 'Categoria inexistente'});
         return;
-    }
+    } */
 
-    const category = await Category.findById(cat);
+    /* const category = await Category.findById(cat);
+    console.log(category);
     if(!category) {
         res.json({error: 'categoria Inexistente'});
         return;
-    }
+    } */
 
     if(price) { // Ex: R$ 8.000,35 = 8000.35
         price = price.replace('.', '').replace(',', '.').replace('R$', '');

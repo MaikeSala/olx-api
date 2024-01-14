@@ -177,3 +177,12 @@ html {
     gap: 30px;
     height: 100px;
 }
+#input-submit-cad {
+    background-color: #F28000;
+    width: 350px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    color: #FFFFFF;
+    font-weight: 700;
+}
